@@ -1,0 +1,297 @@
+# Bake Begins!
+### (1 of 6) Copy sources
+$ cp -a OFL.txt builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/OFL.txt
+$ cp -a src/ufo/redacted-script-regular.ufo src/ufo/redacted-script-bold.ufo src/ufo/redacted-script-light.ufo src/ufo/redacted-regular.ufo fonts/redacted-regular.ttf fonts/redacted-script-bold.ttf fonts/redacted-script-regular.ttf fonts/redacted-script-light.ttf fonts/web/redacted-regular.ttf fonts/web/redacted-script-bold.ttf fonts/web/redacted-script-regular.ttf fonts/web/redacted-script-light.ttf src/fontforge/Redacted-Regular.ttf builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources
+### (2 of 6) Run upstream tests
+$ fontbakery-check.py upstream-repo sources
+WARNING: Please install PyICU <https://pypi.python.org/pypi/PyICU> to enable CLDR related features, perhaps with: pip install pyicu
+$ fontbakery-check.py upstream redacted-script-regular.ufo
+$ fontbakery-check.py upstream redacted-script-bold.ufo
+$ fontbakery-check.py upstream redacted-script-light.ufo
+$ fontbakery-check.py upstream redacted-regular.ufo
+$ fontbakery-check.py upstream Redacted-Regular.ttf
+$ fontbakery-check.py upstream redacted-regular.ttf
+$ fontbakery-check.py upstream redacted-script-bold.ttf
+$ fontbakery-check.py upstream redacted-script-regular.ttf
+$ fontbakery-check.py upstream redacted-script-light.ttf
+### (3 of 6) Convert sources to TTF
+$ fontbakery-build-font2ttf.py sources/redacted-script-regular.ufo redacted-script-regular.ttf
+Success: Generated OpenType-TTF (/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf)
+### Test redacted-script-regular.ttf
+$ fontbakery-check.py result redacted-script-regular.ttf
+no table gasp
+ER: redacted-script-regular.ttf space 486 nbsp 532: Fixed space to 532
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf
+The following table(s) in the font have been ignored by FontForge
+  Ignoring 'DSIG' digital signature table
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/Redacted-Regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/Redacted-Regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-bold.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-bold.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-light.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-light.ttf
+$ fontbakery-fix-vertical-metrics.py /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/Redacted-Regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-bold.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-light.ttf
+Parameter              redacted-script-regular.ttf    Redacted-Regular.ttf    redacted-regular.ttf    redacted-script-bold.ttf    redacted-script-regular.ttf    redacted-script-light.ttf
+ymax                   287                            800                     1638                    1365                        1365                           1365
+hhea.ascent            1638                           1638                    1638                    1638                        1638                           1638
+OS/2.sTypoAscender     1638                           1638                    1638                    1638                        1638                           1638
+OS/2.usWinAscent       1638                           1638                    1638                    1638                        1638                           1638
+ymin                   -30                            -200                    -410                    -115                        -61                            -20
+hhea.descent           -410                           -410                    -410                    -410                        -410                           -410
+OS/2.sTypoDescender    -410                           -410                    -410                    -410                        -410                           -410
+OS/2.usWinDescent      410                            410                     410                     410                         410                            410
+hhea.lineGap           0                              0                       0                       0                           0                              0
+OS/2.sTypoLineGap      0                              0                       0                       0                           0                              0
+hhea total             2048                           2048                    2048                    2048                        2048                           2048
+typo total             2048                           2048                    2048                    2048                        2048                           2048
+win total              2048                           2048                    2048                    2048                        2048                           2048
+UPM:Heights            1638:317                       1638:1000               1638:2048               1638:1480                   1638:1426                      1638:1385
+UPM:Heights %          19 %                           61 %                    125 %                   90 %                        87 %                           84 %
+
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf
+### Optimize TTF redacted-script-regular.ttf
+$ pyftsubset builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf --glyphs=* --layout-features=* --name-IDs=* --hinting --legacy-kern --notdef-outline --no-subset-tables+=DSIG --drop-tables-=DSIG
+$ # look at the size savings of that subset process
+$ ls -la builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf.fix | awk '{ print $5 "	" $9 }'
+16804	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf 14112	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf.fix
+$ # copy back optimized ttf to original filename
+$ mv builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf.fix builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf
+### Autohint TTFs (ttfautohint) redacted-script-regular.ttf
+$ ttfautohint -l 7 -r 28 -G 50 -x 13 -w "G" builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf 'builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf.fix'
+$ ls -la builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf.fix | awk '{ print $5 "	" $9 }'
+14112	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf 17676	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf.fix
+$ # copy back optimized ttf to original filename
+$ mv builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf.fix builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf
+### Subset TTFs (pyftsubset) redacted-script-regular.ttf
+$ pyftsubset --unicodes="U+0020-U+007e,U+00a0-U+00ff,U+0131,U+0152,U+0153,U+02c6,U+02da,U+02dc,U+2013,U+2014,U+2018-U+201a,U+201c-U+201e,U+2022,U+2039,U+203a,U+2044,U+2074,U+20ac,U+2122,U+2215,U+e0ff,U+effd,U+f000" --notdef-outline --name-IDs=* --hinting redacted-script-regular.ttf
+$ mv redacted-script-regular.ttf.subset builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.latin
+$ pyftsubset --unicodes="U+0052,U+0065,U+0064,U+0061,U+0063,U+0074,U+0065,U+0064,U+0020,U+0053,U+0063,U+0072,U+0069,U+0070,U+0074" --notdef-outline --name-IDs=* --hinting redacted-script-regular.ttf
+$ mv redacted-script-regular.ttf.subset builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.menu
+$ fontbakery-build-font2ttf.py sources/redacted-script-bold.ufo redacted-script-bold.ttf
+Success: Generated OpenType-TTF (/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf)
+### Test redacted-script-bold.ttf
+$ fontbakery-check.py result redacted-script-bold.ttf
+no table gasp
+ER: redacted-script-bold.ttf space 486 nbsp 532: Fixed space to 532
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf
+The following table(s) in the font have been ignored by FontForge
+  Ignoring 'DSIG' digital signature table
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/Redacted-Regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/Redacted-Regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-bold.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-bold.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-light.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-light.ttf
+$ fontbakery-fix-vertical-metrics.py /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/Redacted-Regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-bold.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-light.ttf
+Parameter              redacted-script-bold.ttf    redacted-script-regular.ttf    Redacted-Regular.ttf    redacted-regular.ttf    redacted-script-bold.ttf    redacted-script-regular.ttf    redacted-script-light.ttf
+ymax                   516                         287                            800                     1638                    1365                        1365                           1365
+hhea.ascent            1638                        1638                           1638                    1638                    1638                        1638                           1638
+OS/2.sTypoAscender     1638                        1638                           1638                    1638                    1638                        1638                           1638
+OS/2.usWinAscent       1638                        1638                           1638                    1638                    1638                        1638                           1638
+ymin                   -56                         -30                            -200                    -410                    -115                        -61                            -20
+hhea.descent           -410                        -410                           -410                    -410                    -410                        -410                           -410
+OS/2.sTypoDescender    -410                        -410                           -410                    -410                    -410                        -410                           -410
+OS/2.usWinDescent      410                         410                            410                     410                     410                         410                            410
+hhea.lineGap           0                           0                              0                       0                       0                           0                              0
+OS/2.sTypoLineGap      0                           0                              0                       0                       0                           0                              0
+hhea total             2048                        2048                           2048                    2048                    2048                        2048                           2048
+typo total             2048                        2048                           2048                    2048                    2048                        2048                           2048
+win total              2048                        2048                           2048                    2048                    2048                        2048                           2048
+UPM:Heights            1638:572                    1638:317                       1638:1000               1638:2048               1638:1480                   1638:1426                      1638:1385
+UPM:Heights %          34 %                        19 %                           61 %                    125 %                   90 %                        87 %                           84 %
+
+### Optimize TTF redacted-script-bold.ttf
+$ pyftsubset builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf --glyphs=* --layout-features=* --name-IDs=* --hinting --legacy-kern --notdef-outline --no-subset-tables+=DSIG --drop-tables-=DSIG
+$ # look at the size savings of that subset process
+$ ls -la builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf.fix | awk '{ print $5 "	" $9 }'
+17024	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf 14092	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf.fix
+$ # copy back optimized ttf to original filename
+$ mv builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf.fix builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf
+### Autohint TTFs (ttfautohint) redacted-script-bold.ttf
+$ ttfautohint -l 7 -r 28 -G 50 -x 13 -w "G" builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf 'builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf.fix'
+$ ls -la builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf.fix | awk '{ print $5 "	" $9 }'
+14092	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf 17660	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf.fix
+$ # copy back optimized ttf to original filename
+$ mv builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf.fix builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf
+### Subset TTFs (pyftsubset) redacted-script-bold.ttf
+$ pyftsubset --unicodes="U+0020-U+007e,U+00a0-U+00ff,U+0131,U+0152,U+0153,U+02c6,U+02da,U+02dc,U+2013,U+2014,U+2018-U+201a,U+201c-U+201e,U+2022,U+2039,U+203a,U+2044,U+2074,U+20ac,U+2122,U+2215,U+e0ff,U+effd,U+f000" --notdef-outline --name-IDs=* --hinting redacted-script-bold.ttf
+$ mv redacted-script-bold.ttf.subset builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.latin
+$ pyftsubset --unicodes="U+0052,U+0065,U+0064,U+0061,U+0063,U+0074,U+0065,U+0064,U+0020,U+0053,U+0063,U+0072,U+0069,U+0070,U+0074" --notdef-outline --name-IDs=* --hinting redacted-script-bold.ttf
+$ mv redacted-script-bold.ttf.subset builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.menu
+$ fontbakery-build-font2ttf.py sources/redacted-script-light.ufo redacted-script-light.ttf
+Success: Generated OpenType-TTF (/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf)
+### Test redacted-script-light.ttf
+$ fontbakery-check.py result redacted-script-light.ttf
+no table gasp
+ER: redacted-script-light.ttf space 486 nbsp 532: Fixed space to 532
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf
+The following table(s) in the font have been ignored by FontForge
+  Ignoring 'DSIG' digital signature table
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/Redacted-Regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/Redacted-Regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-bold.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-bold.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-light.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-light.ttf
+$ fontbakery-fix-vertical-metrics.py /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/Redacted-Regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-bold.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-light.ttf
+Parameter              redacted-script-bold.ttf    redacted-script-regular.ttf    redacted-script-light.ttf    Redacted-Regular.ttf    redacted-regular.ttf    redacted-script-bold.ttf    redacted-script-regular.ttf    redacted-script-light.ttf
+ymax                   516                         287                            266                          800                     1638                    1365                        1365                           1365
+hhea.ascent            1638                        1638                           1638                         1638                    1638                    1638                        1638                           1638
+OS/2.sTypoAscender     1638                        1638                           1638                         1638                    1638                    1638                        1638                           1638
+OS/2.usWinAscent       1638                        1638                           1638                         1638                    1638                    1638                        1638                           1638
+ymin                   -56                         -30                            -10                          -200                    -410                    -115                        -61                            -20
+hhea.descent           -410                        -410                           -410                         -410                    -410                    -410                        -410                           -410
+OS/2.sTypoDescender    -410                        -410                           -410                         -410                    -410                    -410                        -410                           -410
+OS/2.usWinDescent      410                         410                            410                          410                     410                     410                         410                            410
+hhea.lineGap           0                           0                              0                            0                       0                       0                           0                              0
+OS/2.sTypoLineGap      0                           0                              0                            0                       0                       0                           0                              0
+hhea total             2048                        2048                           2048                         2048                    2048                    2048                        2048                           2048
+typo total             2048                        2048                           2048                         2048                    2048                    2048                        2048                           2048
+win total              2048                        2048                           2048                         2048                    2048                    2048                        2048                           2048
+UPM:Heights            1638:572                    1638:317                       1638:276                     1638:1000               1638:2048               1638:1480                   1638:1426                      1638:1385
+UPM:Heights %          34 %                        19 %                           16 %                         61 %                    125 %                   90 %                        87 %                           84 %
+
+### Optimize TTF redacted-script-light.ttf
+$ pyftsubset builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf --glyphs=* --layout-features=* --name-IDs=* --hinting --legacy-kern --notdef-outline --no-subset-tables+=DSIG --drop-tables-=DSIG
+$ # look at the size savings of that subset process
+$ ls -la builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf.fix | awk '{ print $5 "	" $9 }'
+16860	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf 14144	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf.fix
+$ # copy back optimized ttf to original filename
+$ mv builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf.fix builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf
+### Autohint TTFs (ttfautohint) redacted-script-light.ttf
+$ ttfautohint -l 7 -r 28 -G 50 -x 13 -w "G" builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf 'builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf.fix'
+$ ls -la builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf.fix | awk '{ print $5 "	" $9 }'
+14144	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf 17684	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf.fix
+$ # copy back optimized ttf to original filename
+$ mv builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf.fix builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf
+### Subset TTFs (pyftsubset) redacted-script-light.ttf
+$ pyftsubset --unicodes="U+0020-U+007e,U+00a0-U+00ff,U+0131,U+0152,U+0153,U+02c6,U+02da,U+02dc,U+2013,U+2014,U+2018-U+201a,U+201c-U+201e,U+2022,U+2039,U+203a,U+2044,U+2074,U+20ac,U+2122,U+2215,U+e0ff,U+effd,U+f000" --notdef-outline --name-IDs=* --hinting redacted-script-light.ttf
+$ mv redacted-script-light.ttf.subset builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.latin
+$ pyftsubset --unicodes="U+0052,U+0065,U+0064,U+0061,U+0063,U+0074,U+0065,U+0064,U+0020,U+0053,U+0063,U+0072,U+0069,U+0070,U+0074" --notdef-outline --name-IDs=* --hinting redacted-script-light.ttf
+$ mv redacted-script-light.ttf.subset builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.menu
+$ fontbakery-build-font2ttf.py sources/redacted-regular.ufo redacted-regular.ttf
+Success: Generated OpenType-TTF (/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf)
+### Test redacted-regular.ttf
+$ fontbakery-check.py result redacted-regular.ttf
+no table gasp
+ER: redacted-regular.ttf space 0 nbsp 375: Fixed space to 375
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf
+The following table(s) in the font have been ignored by FontForge
+  Ignoring 'DSIG' digital signature table
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/Redacted-Regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/Redacted-Regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-bold.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-bold.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-regular.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-regular.ttf
+$ mv /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-light.ttf.fix /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-light.ttf
+$ fontbakery-fix-vertical-metrics.py /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/Redacted-Regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-bold.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-regular.ttf /home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/sources/redacted-script-light.ttf
+Parameter              redacted-regular.ttf    redacted-script-bold.ttf    redacted-script-regular.ttf    redacted-script-light.ttf    Redacted-Regular.ttf    redacted-regular.ttf    redacted-script-bold.ttf    redacted-script-regular.ttf    redacted-script-light.ttf
+ymax                   800                     516                         287                            266                          800                     1638                    1365                        1365                           1365
+hhea.ascent            1638                    1638                        1638                           1638                         1638                    1638                    1638                        1638                           1638
+OS/2.sTypoAscender     1638                    1638                        1638                           1638                         1638                    1638                    1638                        1638                           1638
+OS/2.usWinAscent       1638                    1638                        1638                           1638                         1638                    1638                    1638                        1638                           1638
+ymin                   -200                    -56                         -30                            -10                          -200                    -410                    -115                        -61                            -20
+hhea.descent           -410                    -410                        -410                           -410                         -410                    -410                    -410                        -410                           -410
+OS/2.sTypoDescender    -410                    -410                        -410                           -410                         -410                    -410                    -410                        -410                           -410
+OS/2.usWinDescent      410                     410                         410                            410                          410                     410                     410                         410                            410
+hhea.lineGap           0                       0                           0                              0                            0                       0                       0                           0                              0
+OS/2.sTypoLineGap      0                       0                           0                              0                            0                       0                       0                           0                              0
+hhea total             2048                    2048                        2048                           2048                         2048                    2048                    2048                        2048                           2048
+typo total             2048                    2048                        2048                           2048                         2048                    2048                    2048                        2048                           2048
+win total              2048                    2048                        2048                           2048                         2048                    2048                    2048                        2048                           2048
+UPM:Heights            1638:1000               1638:572                    1638:317                       1638:276                     1638:1000               1638:2048               1638:1480                   1638:1426                      1638:1385
+UPM:Heights %          61 %                    34 %                        19 %                           16 %                         61 %                    125 %                   90 %                        87 %                           84 %
+
+### Optimize TTF redacted-regular.ttf
+$ pyftsubset builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf --glyphs=* --layout-features=* --name-IDs=* --hinting --legacy-kern --notdef-outline --no-subset-tables+=DSIG --drop-tables-=DSIG
+$ # look at the size savings of that subset process
+$ ls -la builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf.fix | awk '{ print $5 "	" $9 }'
+15660	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf 12852	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf.fix
+$ # copy back optimized ttf to original filename
+$ mv builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf.fix builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf
+### Autohint TTFs (ttfautohint) redacted-regular.ttf
+$ ttfautohint -l 7 -r 28 -G 50 -x 13 -w "G" builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf 'builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf.fix'
+$ ls -la builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf.fix | awk '{ print $5 "	" $9 }'
+12852	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf 16320	/home/travis/build/christiannaths/Redacted-Font/builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf.fix
+$ # copy back optimized ttf to original filename
+$ mv builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf.fix builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf
+### Subset TTFs (pyftsubset) redacted-regular.ttf
+$ pyftsubset --unicodes="U+0020-U+007e,U+00a0-U+00ff,U+0131,U+0152,U+0153,U+02c6,U+02da,U+02dc,U+2013,U+2014,U+2018-U+201a,U+201c-U+201e,U+2022,U+2039,U+203a,U+2044,U+2074,U+20ac,U+2122,U+2215,U+e0ff,U+effd,U+f000" --notdef-outline --name-IDs=* --hinting redacted-regular.ttf
+$ mv redacted-regular.ttf.subset builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.latin
+$ pyftsubset --unicodes="U+0052,U+0065,U+0064,U+0061,U+0063,U+0074,U+0065,U+0064" --notdef-outline --name-IDs=* --hinting redacted-regular.ttf
+$ mv redacted-regular.ttf.subset builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.menu
+### (4 of 6) Generate METADATA.json (fontbakery-build-metadata.py)
+$ fontbakery-build-metadata.py builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1
+No Regular found! REMEMBER! Create a DESCRIPTION.en_us.html
+Created DESCRIPTION.en_us.html with:
+<p>TODO</p>
+FATAL: No *-Regular.ttf found to set family name!
+WARNING: No *-Regular.ttf to calculate gzipped filesize!
+{
+  "name": "UNKNOWN", 
+  "designer": null, 
+  "license": "", 
+  "visibility": "Sandbox", 
+  "category": "monospace", 
+  "size": -1, 
+  "dateAdded": "2015-01-26", 
+  "fonts": [
+    {
+      "name": "UNKNOWN", 
+      "postScriptName": "Redacted", 
+      "fullName": "Redacted", 
+      "style": "normal", 
+      "weight": 400, 
+      "filename": "redacted-regular.ttf", 
+      "copyright": "Copyright (c) 2013, Christian Naths (christiannaths@gmail.com christiannaths.com)"
+    }, 
+    {
+      "name": "UNKNOWN", 
+      "postScriptName": "RedactedScript-Bold", 
+      "fullName": "Redacted Script Bold", 
+      "style": "normal", 
+      "weight": 700, 
+      "filename": "redacted-script-bold.ttf", 
+      "copyright": "Copyright (c) 2013, Christian Naths (christiannaths@gmail.com christiannaths.com)"
+    }, 
+    {
+      "name": "UNKNOWN", 
+      "postScriptName": "RedactedScript", 
+      "fullName": "Redacted Script", 
+      "style": "normal", 
+      "weight": 400, 
+      "filename": "redacted-script-regular.ttf", 
+      "copyright": "Copyright (c) 2013, Christian Naths (christiannaths@gmail.com christiannaths.com)"
+    }, 
+    {
+      "name": "UNKNOWN", 
+      "postScriptName": "RedactedScript-Light", 
+      "fullName": "Redacted Script Light", 
+      "style": "normal", 
+      "weight": 300, 
+      "filename": "redacted-script-light.ttf", 
+      "copyright": "Copyright (c) 2013, Christian Naths (christiannaths@gmail.com christiannaths.com)"
+    }
+  ], 
+  "subsets": [
+    "latin", 
+    "menu"
+  ]
+}
+### (5 of 6) Run tests for METADATA.json
+$ fontbakery-check.py metadata METADATA.json
+### (6 of 6) pyfontaine
+$ fontaine --collections subsets --text builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-regular.ttf builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-bold.ttf builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-regular.ttf builds/c9c3d8e8fb21372a35eeeb76dd7bdcf9ac12caf2.1/redacted-script-light.ttf > fontaine.txt
+WARNING: Please install PyICU <https://pypi.python.org/pypi/PyICU> to enable CLDR related features, perhaps with: pip install pyicu
+end of pyfontaine process
